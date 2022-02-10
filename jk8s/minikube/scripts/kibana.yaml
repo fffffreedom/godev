@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-09-11T01:15:28Z"
+  generateName: kibana-logging-
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    k8s-app: kibana-logging
+  name: kibana-logging-jc724
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicationController
+    name: kibana-logging
+    uid: 01dd59fa-bcf2-4705-a2b8-b8e2fb497859
+  resourceVersion: "205480"
+  selfLink: /api/v1/namespaces/kube-system/pods/kibana-logging-jc724
+  uid: d0504073-1694-402a-a0ac-51a58f19a812
+spec:
+  containers:
+  - env:
+    - name: ELASTICSEARCH_URL
+      value: http://elasticsearch-logging:9200
+    - name: XPACK_MONITORING_ENABLED
+      value: "false"
+    - name: XPACK_SECURITY_ENABLED
+      value: "false"
+    image: docker.elastic.co/kibana/kibana:5.6.2
+    imagePullPolicy: IfNotPresent
+    name: kibana-logging
+    ports:
+    - containerPort: 5601
+      name: ui
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 500m
+      requests:
+        cpu: 100m
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-q9vwv
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-q9vwv
+    secret:
+      defaultMode: 420
+      secretName: default-token-q9vwv
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-11T01:15:28Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-11T01:17:50Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-11T01:17:50Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-11T01:15:28Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://bf8c18bffbfbd98cfcfee58814dad7fd3d8561d6753a60e355e8c2c1503f2f6c
+    image: docker.elastic.co/kibana/kibana:5.6.2
+    imageID: docker-pullable://docker.elastic.co/kibana/kibana@sha256:cd948a9bda4622f1437afc4a3e78be6c8c25fc62f40aa0376f3d690f2436568f
+    lastState: {}
+    name: kibana-logging
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-09-11T01:17:49Z"
+  hostIP: 192.168.99.112
+  phase: Running
+  podIP: 172.17.0.13
+  podIPs:
+  - ip: 172.17.0.13
+  qosClass: Burstable
+  startTime: "2021-09-11T01:15:28Z"

@@ -1,0 +1,21 @@
+fffffreedom:minikube jonny$ sh create-minikube.sh minikube
+🎉  minikube 1.22.0 is available! Download it: https://github.com/kubernetes/minikube/releases/tag/v1.22.0
+💡  To disable this notice, run: 'minikube config set WantUpdateNotification false'
+
+🙄  Darwin 11.2.3 上的 minikube v1.7.3
+✨  Using the virtualbox driver based on user configuration
+✅  正在使用镜像存储库 registry.cn-hangzhou.aliyuncs.com/google_containers
+🔥  正在创建 virtualbox 虚拟机（CPUs=4，Memory=8192MB, Disk=20000MB）...
+🌐  找到的网络选项：
+    ▪ http_proxy=http://127.0.0.1:7890
+⚠️  您似乎正在使用代理，但您的 NO_PROXY 环境不包含 minikube IP (192.168.99.112)。如需了解详情，请参阅 https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+    ▪ https_proxy=http://127.0.0.1:7890
+    ▪ no_proxy=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+🐳  正在 Docker 19.03.6 中准备 Kubernetes v1.17.3…
+    ▪ env HTTP_PROXY=http://127.0.0.1:7890
+    ▪ env HTTPS_PROXY=http://127.0.0.1:7890
+    ▪ env NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+🚀  正在启动 Kubernetes ... 
+🌟  Enabling addons: default-storageclass, storage-provisioner
+⌛  等待集群上线...
+🏄  完成！kubectl 已经配置至 "minikube"

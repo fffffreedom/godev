@@ -19,7 +19,7 @@ func main() {
 	checkErr(e)
 	fmt.Printf("get path: %s\n", pwd)
 
-	fpath := pwd + "/godemos/data/io.txt"
+	fpath := pwd + "/data/io.txt"
 
 	content, err := ioutil.ReadFile(fpath)
 	checkErr(err)
